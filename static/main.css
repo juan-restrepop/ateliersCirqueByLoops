@@ -44,14 +44,137 @@ body
 			order: 2;
 
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 18px;
 
-	width: 800px;
+	width: 95%;
+	min-width: 200px;
 	padding: 10px;
 	
 
 	border: 1px solid blue;
 }
+
+/* Main */
+.main
+{
+	border: solid 1px red;
+	display: -webkit-flex;
+	display: 		 flex;
+	-webkit-flex-direction: column;
+			flex-direction: column;
+	-webkit-order: 2;
+			order: 2;
+	-webkit-align-items: center;
+			align-items: center;
+
+	text-align: center;
+
+	height: 130px;
+} 
+
+.button
+{
+	border: 5px solid #8ABEC3;
+	border-radius: 10pt;
+	background: #8ABEC3;
+	margin: 3px;
+	color: black;
+}
+
+.formulaire-nouveau
+{
+	display: -webkit-flex;
+	display:		 flex;
+
+	-webkit-flex-direction: column;
+			flex-direction: column;
+}
+
+.nouveau-eleve
+{
+	display: -webkit-flex;
+	display:		 flex;
+
+	-webkit-flex-direction: row;
+			flex-direction: row;
+}
+
+/*
+input[type=text] 
+{
+    width: 200px;
+    font-size: 20px;
+    padding: 2px;
+    font-family: monospace;
+}
+*/
+
+.nom-input
+{
+	width: 200px;
+    font-size: 18px;
+    padding: 2px;
+    font-family: monospace;
+}
+
+.prenom-input
+{
+	width: 200px;
+    font-size: 18px;
+    padding: 2px;
+    font-family: monospace;
+}
+
+.age-input
+{
+	width: 40px;
+    font-size: 18px;
+    padding: 2px;
+    font-family: monospace;
+}
+
+.email-input
+{
+	width: 200px;
+    font-size: 18px;
+    padding: 2px;
+    font-family: monospace;
+}
+
+.telephone-input
+{
+	width: 200px;
+    font-size: 18px;
+    padding: 2px;
+    font-family: monospace;
+}
+
+.location-input
+{
+	width: 200px;
+    font-size: 18px;
+    padding: 2px;
+    font-family: monospace;
+}
+
+.error
+{
+	color: red;
+}
+
+.label 
+{
+  font-size: 20px;
+  width: 100px;
+}
+
+label + label 
+{
+    margin-top: 20px;
+}
+
+
+
 
 /* The FOOTER */
 footer
