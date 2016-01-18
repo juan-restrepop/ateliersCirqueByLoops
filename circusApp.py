@@ -48,8 +48,13 @@ TEL_RE = re.compile(r"^[0-9_-]{10}$")
 def valid_telephone(telephone):
     return not telephone or TEL_RE.match(telephone)
 
+AGE_RE = re.compile(r"^[0-9_-]{1,2}$")
+def valid_age(age):
+    return not age or AGE_RE.match(age)
+
 
 class NewStudent(CircusAppHandler):
+    #TODO: Handle correctly the phone regular expression
     def get(self):
         self.render('nouveau_eleve.html')
 
@@ -82,6 +87,10 @@ class NewStudent(CircusAppHandler):
             params['error_age'] = "L' age siouple"
             have_error = True
 
+        if not valid_age(self.age):
+            params['error_age'] = "Age invalide"
+            have_error = True
+
         if not valid_email(self.email):
             params['error_email'] = "Email invalide"
             have_error = True
@@ -91,7 +100,7 @@ class NewStudent(CircusAppHandler):
             have_error = True
 
         if not self.site:
-            params['error_site'] = "Une site siouple"
+            params['error_site'] = "Un site siouple"
             have_error = True
 
         if have_error:
