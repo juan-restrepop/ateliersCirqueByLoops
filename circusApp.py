@@ -25,9 +25,19 @@ class MainPage(CircusAppHandler):
     def get(self):
         self.write('Bonjour les circassiens!')
 
+class NewCourse(CircusAppHandler):
+    def get(self):
+        self.write("Cette page permettra d'ajouter un nouveau stage a la base de donnees")
+
+class NewStudent(CircusAppHandler):
+    def get(self):
+        self.write("Cette page permettra d'ajouter un nouveau 'eleve' a la base de donnees")
+
 
 
 ### And the handler of everything
-app = webapp2.WSGIApplication([('/', MainPage)
+app = webapp2.WSGIApplication([('/', MainPage),
+                                ('/ajouter-stage', NewCourse),
+                                ('/ajouter-eleve', NewStudent)
                              ],
                               debug=True)
