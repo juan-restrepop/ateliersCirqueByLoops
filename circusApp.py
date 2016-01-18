@@ -61,13 +61,14 @@ class NewStudent(CircusAppHandler):
         self.sexe = self.request.get('sexe')
         self.email = self.request.get('email')
         self.telephone = self.request.get('telephone')
-        self.location = self.request.get('location')
+        self.site = self.request.get('site')
 
         params = dict(nom = self.nom,
                       prenom = self.prenom,
                       age = self.age,
                       email=self.email,
-                      telephone=self.telephone)
+                      telephone=self.telephone,
+                      site=self.site)
 
         if not self.nom :
             params['error_nom'] = "Un nom siouple"
@@ -89,6 +90,10 @@ class NewStudent(CircusAppHandler):
             params['error_telephone'] = "Telephone invalable"
             have_error = True
 
+        if not self.site:
+            params['error_site'] = "Une site siouple"
+            have_error = True
+
         if have_error:
             self.render('nouveau_eleve.html', **params)
         else:
@@ -99,20 +104,19 @@ class NewStudent(CircusAppHandler):
 
 class NewStudentRegistration(NewStudent):
     def done(self):
-        self.redirect('ajouter-eleve/bienvenue?nom=' + self.nom + '&prenom=' + self.prenom)
+        self.redirect('/bienvenue?prenom=' + self.prenom + '&nom=' + self.nom)
 
 
 class Bienvenue(CircusAppHandler):
     def get(self):
         nom = self.request.get('nom')
         prenom = self.request.get('prenom')
-
         self.render('bienvenue.html', nom = nom, prenom = prenom)
 
 ### And the handler of everything
 app = webapp2.WSGIApplication([('/', MainPage),
                                 ('/ajouter-stage', NewCourse),
                                 ('/ajouter-eleve', NewStudentRegistration),
-                                ('ajouter-eleve/bienvenue', Bienvenue)
+                                ('/bienvenue', Bienvenue)
                              ],
                               debug=True)
