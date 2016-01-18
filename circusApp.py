@@ -22,6 +22,7 @@ class CircusAppHandler(webapp2.RequestHandler):
         self.response.out.write(*a, **kw)
 
     def render_str(self, template, **params):
+        params['user'] = self.user
         return render_str(template, **params)
 
     def render(self, template, **kw):
@@ -32,9 +33,12 @@ class MainPage(CircusAppHandler):
     def get(self):
         self.render('front.html')
 
+## New course page ##
 class NewCourse(CircusAppHandler):
     def get(self):
         self.render('nouveau_stage.html')
+
+## New student page ##
 
 class NewStudent(CircusAppHandler):
     def get(self):
