@@ -1,5 +1,113 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Cette page permettra d'ajouter un nouveau 'eleve' a la base de donnees</h1>
+<section class="formulaire-nouveau">
+    <h1>Nouveau élève</h1>
+    <form method="post">
+        <table class="nouveau-eleve">
+            <tr>
+                <td class="label">
+                    Nom
+                </td>
+
+                <td>
+                    <input type="text" name="nom" value="{{nom}}" class="nom-input">
+                </td>
+
+                <td class="error">
+                    {{error_nom}}
+                </td>
+            </tr>
+
+            <tr class="nouveau-eleve">
+                <td class="label">
+                    Prénom
+                </td>
+
+                <td>
+                    <input type="text" name="prenom" value="{{prenom}}" class="prenom-input">
+                </td>
+
+                <td class="error">
+                    {{error_prenom}}
+                </td>
+            </tr>
+
+            <tr class="nouveau-eleve">
+                <td class="label">
+                    Age
+                </td>
+
+                <td>
+                    <input type="text" name="age" value="{{age}}" class="age-input">
+                </td>
+
+                <td class="error">
+                    {{error_age}}
+                </td>
+            </tr>
+
+            <tr class="nouveau-eleve">
+                <td class="label">
+                    Sexe
+                </td>
+
+                <td>
+                    <select>
+                      <option value="M">M</option>
+                      <option value="F">F</option>
+                    </select>
+                </td>
+
+                <td class="error">
+                    {{error_sexe}}
+                </td>
+            </tr>
+
+            <tr class="nouveau-eleve">
+                <td class="label">
+                    Email
+                </td>
+
+                <td>
+                    <input type="text" name="email" value="{{email}}" class="email-input">
+                </td>
+
+                <td class="error">
+                    {{error_email}}
+                </td>
+            </tr>
+
+            <tr class="nouveau-eleve">
+                <td class="label">
+                    Telephone
+                </td>
+
+                <td>
+                    <input type="text" name=telephone" value="{{telephone}}" class="telephone-input">
+                </td>
+
+                <td class="error">
+                    {{error_telephone}}
+                </td>
+            </tr>
+
+            <tr class="nouveau-eleve">
+                <td class="label">
+                    Location
+                </td>
+
+                <td>
+                    <input type="text" name=telephone" value="{{telephone}}" class="location-input">
+                </td>
+
+                <td class="error">
+                    {{error_location}}
+                </td>
+            </tr>
+        </table>
+
+        <input type="submit" class="button">
+    </form>
+</section>
 {% endblock %}
