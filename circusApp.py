@@ -30,15 +30,15 @@ class CircusAppHandler(webapp2.RequestHandler):
 ## The main page ##
 class MainPage(CircusAppHandler):
     def get(self):
-        self.write('Bonjour les circassiens!')
+        self.render('front.html')
 
 class NewCourse(CircusAppHandler):
     def get(self):
-        self.write("Cette page permettra d'ajouter un nouveau stage a la base de donnees")
+        self.render('nouveau_stage.html')
 
 class NewStudent(CircusAppHandler):
     def get(self):
-        self.write("Cette page permettra d'ajouter un nouveau 'eleve' a la base de donnees")
+        self.render('nouveau_eleve.html')
 
 
 
