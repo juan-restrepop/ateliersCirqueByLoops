@@ -1,4 +1,4 @@
-# Web interface for data management of circus courses by "Compagnie le fil de soie"
+# Web interface for data management of circus courses
 
 ===
 
